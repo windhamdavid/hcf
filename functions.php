@@ -41,6 +41,11 @@ function hcf_enqueue_scripts() {
 	}
 }
 
+add_action('wp_footer', 'hcf_html5shim', 21);
+function dw_html5shim() { ?>
+<!--[if lt IE 9]><script src="<?php echo get_template_directory_uri() . '/js/html5shiv.min.js'?>"></script><![endif]-->
+<?php }
+
 function hcf_enhanced_image_navigation( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 		return $url;
