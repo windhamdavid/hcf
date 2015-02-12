@@ -2,7 +2,9 @@
 
 add_action( 'after_setup_theme', 'hcf_setup' );
 function hcf_setup() {
-
+	require( get_template_directory() . '/inc/utils.php' );
+	require( get_template_directory() . '/inc/template.php' );
+	require( get_template_directory() . '/inc/tweaks.php' );
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 700;
 	add_editor_style();
@@ -26,8 +28,10 @@ function hcf_setup() {
 
 function hcf_enqueue_scripts() {
 	global $post;
-	wp_enqueue_style( 'hcf-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Oswald:300', '', '1.0', 'all' );
-	wp_enqueue_style( 'hcf-style', get_stylesheet_uri(), false, '1.2', 'all' );
+	wp_enqueue_style( 'font', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Oswald:300', '', '1.0', 'all' );
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'boots', get_template_directory_uri() . '/css/boot.css');
+	
 	wp_enqueue_script( 'jquery' );
 	if ( is_singular() && wp_attachment_is_image( $post->ID ) ) {
 		wp_enqueue_script( 'hcf-keyboard-image-navigation', get_template_directory_uri() . '/js/vendor/keyboard-image-navigation.js', array( 'jquery' ), '1.0' );
