@@ -1,12 +1,5 @@
 <?php
 
-
-
-/**
- * Define Theme setup
- * 
- * @since 0.0.1
- */
 add_action( 'after_setup_theme', 'hcf_setup' );
 function hcf_setup() {
 
@@ -25,23 +18,22 @@ function hcf_setup() {
 
 	add_action( 'wp_enqueue_scripts', 'hcf_enqueue_scripts' );
 	add_action( 'wp_print_styles', 'hcf_deregister_styles', 100 );
-	add_action( 'comment_form_before', 'foto_enqueue_comment_reply_script' );
+	add_action( 'comment_form_before', 'hcf_enqueue_comment_reply_script' );
 	add_filter( 'use_default_gallery_style', '__return_false' );
-	add_filter( 'wp_title', 'foto_title', 10, 2 );
+	add_filter( 'wp_title', 'hcf_title', 10, 2 );
 }
 
 
 function hcf_enqueue_scripts() {
 	global $post;
-
-	wp_enqueue_style( 'foto-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Oswald:300', '', '1.0', 'all' );
-	wp_enqueue_style( 'foto-style', get_stylesheet_uri(), false, '1.2', 'all' );
+	wp_enqueue_style( 'hcf-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Oswald:300', '', '1.0', 'all' );
+	wp_enqueue_style( 'hcf-style', get_stylesheet_uri(), false, '1.2', 'all' );
 	wp_enqueue_script( 'jquery' );
 	if ( is_singular() && wp_attachment_is_image( $post->ID ) ) {
-		wp_enqueue_script( 'foto-keyboard-image-navigation', get_template_directory_uri() . '/js/vendor/keyboard-image-navigation.js', array( 'jquery' ), '1.0' );
+		wp_enqueue_script( 'hcf-keyboard-image-navigation', get_template_directory_uri() . '/js/vendor/keyboard-image-navigation.js', array( 'jquery' ), '1.0' );
 	}
-	wp_enqueue_script( 'foto-plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery' ), '1.0', true );
-	wp_enqueue_script( 'foto-methods', get_template_directory_uri() . '/js/methods.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'hcf-plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'hcf-methods', get_template_directory_uri() . '/js/methods.js', array( 'jquery' ), '1.0', true );
 }
 
 function hcf_deregister_styles() {
@@ -54,15 +46,7 @@ function hcf_enqueue_comment_reply_script() {
 	}
 }
 
-
-
-/**
- * Creates a nicely formatted and more specific title element text
- * for output in head of document, based on current view.
- *
- * @since 1.1
- */
-function foto_title( $title, $sep ) {
+function hcf_title( $title, $sep ) {
 	global $paged, $page;
 
 	if ( is_feed() )
@@ -83,49 +67,8 @@ function foto_title( $title, $sep ) {
 	return $title;
 }
 
-/**
- * Adds custom classes to the array of body classes.
- *
- * @since 0.0.1
- */
-function foto_body_classes( $classes ) {
-	// Adds a class of group-blog & multi-author to blogs with more than 1 published author
-	if ( is_multi_author() ) {
-		$classes[] = 'multi-author';
-	}
 
-	return $classes;
-}
-
-/**
- * Add a twitter contact info
- *
- * @since 0.0.1
- */
-function foto_new_contactmethods( $contactmethods ) {
-    $contactmethods['twitter'] = 'Twitter'; // Add Twitter
-	
-    return $contactmethods;
-}
-
-/**
- * Customize tag cloud widget
- *
- * @since 0.0.1
- */
-function foto_new_tag_cloud( $args ) {
-	$args['largest'] 	= 12;
-	$args['smallest'] 	= 12;
-	$args['unit'] 		= 'px';
-	return $args;
-}
-
-/**
- * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
- *
- * @since 0.0.2
- */
-function foto_enhanced_image_navigation( $url, $id ) {
+function hcf_enhanced_image_navigation( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 		return $url;
 
@@ -136,11 +79,7 @@ function foto_enhanced_image_navigation( $url, $id ) {
 	return $url;
 }
 
-/**
- * Register our sidebars and widgetized areas
- * 
- * @since 0.0.1
- */
+
 function foto_widgets_init() {
 	
 	register_widget( 'foto_author_bio' );
