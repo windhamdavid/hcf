@@ -3,20 +3,20 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Holy City Farms</title>
-	<meta name="description" content="Holy City Farms - Wadmalaw Island, South Carolina"/>
-	<link rel="shortcut icon" href="favicon.ico?v3">
-	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<?php wp_head(); ?>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title><?php hcf_page_title(); ?></title>
+<meta name="description" content="Holy City Farms - Wadmalaw Island, South Carolina"/>
+<link rel="shortcut icon" href="favicon.ico?v3">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<meta property="og:title" content=""/>
+<meta property="og:image" content=""/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content=""/>
+<meta property="og:description" content=""/>
+<?php wp_head(); ?>
 </head>
 <body>
 <div id="page" class="hfeed container">

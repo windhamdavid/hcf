@@ -17,121 +17,36 @@ function hcf_setup() {
 	add_image_size( 'featured' , 700, 300, true );
 	add_image_size( 'home-thumbnail' , 220, 150, true );
 	add_image_size( 'single-thumbnail' , 700, 350, true );
-
 	add_action( 'wp_enqueue_scripts', 'hcf_enqueue_scripts' );
-	add_action( 'wp_print_styles', 'hcf_deregister_styles', 100 );
-	add_action( 'comment_form_before', 'hcf_enqueue_comment_reply_script' );
-	add_filter( 'use_default_gallery_style', '__return_false' );
-	add_filter( 'wp_title', 'hcf_title', 10, 2 );
 }
-
 
 function hcf_enqueue_scripts() {
 	global $post;
 	wp_enqueue_style( 'font', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Oswald:300', '', '1.0', 'all' );
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	wp_enqueue_style( 'boots', get_template_directory_uri() . '/css/boot.css');
+	wp_enqueue_style( 'boot', get_template_directory_uri() . '/css/bootstrap.css');
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-2.1.3.min.js', array(), false, true);
+	wp_enqueue_script( 'boot', get_template_directory_uri() . '/js/bootstrap.min.js', 'jquery', '', true );
+	//wp_enqueue_script( 'hcf-plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery' ), '1.0', true );
+	//wp_enqueue_script( 'hcf-methods', get_template_directory_uri() . '/js/methods.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', 'jquery', '', true );
+	wp_enqueue_script( 'init', get_template_directory_uri() . '/js/init.js', 'jquery', '', true );
 	
-	wp_enqueue_script( 'jquery' );
 	if ( is_singular() && wp_attachment_is_image( $post->ID ) ) {
 		wp_enqueue_script( 'hcf-keyboard-image-navigation', get_template_directory_uri() . '/js/vendor/keyboard-image-navigation.js', array( 'jquery' ), '1.0' );
 	}
-	wp_enqueue_script( 'hcf-plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery' ), '1.0', true );
-	wp_enqueue_script( 'hcf-methods', get_template_directory_uri() . '/js/methods.js', array( 'jquery' ), '1.0', true );
-}
-
-function hcf_deregister_styles() {
-	wp_deregister_style( 'wp-pagenavi' );
-}
-
-function hcf_enqueue_comment_reply_script() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 
-function hcf_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'foto' ), max( $paged, $page ) );
-
-	return $title;
-}
-
-
 function hcf_enhanced_image_navigation( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 		return $url;
-
 	$image = get_post( $id );
 	if ( ! empty( $image->post_parent ) && $image->post_parent != $id )
-		$url .= '#main';
-
-	return $url;
-}
-
-
-function foto_widgets_init() {
-	
-	register_widget( 'foto_author_bio' );
-	
-    register_sidebar(array(
-		'name'          => __( 'Home Widget', 'foto'),
-		'description'   => __( 'This sidebar appears on the right side of your site on home page', 'foto' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title">',
-		'after_title'   => '</div>',
-	));
-	
-	register_sidebar(array(
-		'name'          => __( 'Footer Left Widget', 'foto'),
-		'description'   => __( 'This sidebar appears on the footer of your site', 'foto' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title">',
-		'after_title'   => '</div>',
-	));
-	
-	register_sidebar(array(
-		'name'          => __( 'Footer Center Widget', 'foto'),
-		'description'   => __('This sidebar appears on the footer of your site', 'foto'),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title">',
-		'after_title'   => '</div>',
-	));
-	
-	register_sidebar(array(
-		'name'          => __( 'Footer Right Widget', 'foto'),
-		'description'   => __('This sidebar appears on the footer of your site', 'foto'),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title">',
-		'after_title'   => '</div>',
-	));
-	
-	register_sidebar(array(
-		'name'          => __( 'Page Widget', 'foto'),
-		'description'   => __('This sidebar appears on the footer of your site', 'foto'),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title">',
-		'after_title'   => '</div>',
-	));
-	
+	$url .= '#main';
+		return $url;
 }
 ?>

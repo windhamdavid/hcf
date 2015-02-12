@@ -1,5 +1,17 @@
 <?php
 
+if ( ! function_exists( 'hcf_page_title') ) :
+function hcf_page_title() {
+	global $page, $paged; 
+	wp_title( '|', true, 'right' ); 
+	bloginfo( 'name' ); $site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		echo " | $site_description";
+	if ( $paged >= 2 || $page >= 2 )
+		echo ' | ' . sprintf( __( 'Page %s', 'hcf' ), max( $paged, $page ) );
+}
+endif;
+
 if ( ! function_exists( 'hcf_meta_desc') ) :
 function dw_meta_desc() {
 	global $post; 
@@ -54,5 +66,50 @@ function hcf_excerpt($count){
 	$excerpt = substr($excerpt, 0, $count);
 	$excerpt = $excerpt.'... <a href="'.$permalink.'">more</a>';
 	return $excerpt;
+}
+endif;
+
+if ( ! function_exists( 'hcf_paging_nav' ) ) :
+function hcf_paging_nav() {
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		return;
+	}
+
+	$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
+	$pagenum_link = html_entity_decode( get_pagenum_link() );
+	$query_args   = array();
+	$url_parts    = explode( '?', $pagenum_link );
+
+	if ( isset( $url_parts[1] ) ) {
+		wp_parse_str( $url_parts[1], $query_args );
+	}
+
+	$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
+	$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
+
+	$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
+	$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
+
+	$links = paginate_links( array(
+		'base'     => $pagenum_link,
+		'format'   => $format,
+		'total'    => $GLOBALS['wp_query']->max_num_pages,
+		'current'  => $paged,
+		'mid_size' => 1,
+		'add_args' => array_map( 'urlencode', $query_args ),
+		'prev_text' => __( '&larr; &nbsp;', 'dw' ),
+		'next_text' => __( '&nbsp; &rarr;', 'dw' ),
+	) );
+
+	if ( $links ) :
+
+	?>
+	<nav class="navigation pagination paging-navigation" role="navigation">
+		<div class="pagination loop-pagination">
+			<?php echo $links; ?>
+		</div>
+	</nav>
+	<?php
+	endif;
 }
 endif;
