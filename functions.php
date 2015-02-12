@@ -1,133 +1,60 @@
 <?php
 
-/* Loads the Options Settings. */
-if ( !function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/admin/' );
-	require_once dirname( __FILE__ ) . '/admin/options-framework.php';
-}
+
 
 /**
  * Define Theme setup
  * 
  * @since 0.0.1
  */
-add_action( 'after_setup_theme', 'foto_setup' );
-function foto_setup() {
-	
-	/* Set the content width based on the theme's design and stylesheet. */
+add_action( 'after_setup_theme', 'hcf_setup' );
+function hcf_setup() {
+
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 700;
-	
-	/* Make foto available for translation. */
-	load_theme_textdomain( 'foto', get_template_directory() . '/languages' );
-			
-	/* WordPress theme support. */
 	add_editor_style();
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'custom-background' );
 	register_nav_menus( array(
-			'primary' => __( 'Footer Navigation', 'foto' )
+			'primary' => __( 'Footer Navigation', 'hcf' )
 		) );
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'foto-featured' , 700, 300, true );
-	add_image_size( 'foto-home-thumbnail' , 220, 150, true );
-	add_image_size( 'foto-single-thumbnail' , 700, 350, true );
+	add_image_size( 'featured' , 700, 300, true );
+	add_image_size( 'home-thumbnail' , 220, 150, true );
+	add_image_size( 'single-thumbnail' , 700, 350, true );
 
-	/* Enqueue styles & scripts. */
-	add_action( 'wp_enqueue_scripts', 'foto_enqueue_scripts' );
-
-	/* Deregister wp-pagenavi style. */
-	add_action( 'wp_print_styles', 'foto_deregister_styles', 100 );
-
-	/* Comment reply script. */
+	add_action( 'wp_enqueue_scripts', 'hcf_enqueue_scripts' );
+	add_action( 'wp_print_styles', 'hcf_deregister_styles', 100 );
 	add_action( 'comment_form_before', 'foto_enqueue_comment_reply_script' );
-
-	/* Remove gallery inline style. */
 	add_filter( 'use_default_gallery_style', '__return_false' );
-
-	/* wp_title filter. */
 	add_filter( 'wp_title', 'foto_title', 10, 2 );
+}
 
-	/* Custom body class. */
-	add_filter( 'body_class', 'foto_body_classes' );
 
-	/* Add new contact method. */
-	add_filter('user_contactmethods','foto_new_contactmethods', 10, 1 );
-
-	/* Customize tag cloud. */
-	add_filter( 'widget_tag_cloud_args', 'foto_new_tag_cloud' );
-
-	/* next/previous image links on image attachment pages. */
-	add_filter( 'attachment_link', 'foto_enhanced_image_navigation', 10, 2 );
-
-	/* Register sidebars & custom widget. */
-	add_action( 'widgets_init', 'foto_widgets_init' );
-	
-	/**
-	 * Load required files
-	 */
-	require( get_template_directory() . '/includes/extensions.php' );
-	require( get_template_directory() . '/includes/templates.php' );
-	require( get_template_directory() . '/includes/options-functions.php' );
-
-} // end foto_setup
-
-/**
- * Enqueue styles & scripts.
- *
- * @since 0.0.1
- */
-function foto_enqueue_scripts() {
+function hcf_enqueue_scripts() {
 	global $post;
 
 	wp_enqueue_style( 'foto-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Oswald:300', '', '1.0', 'all' );
-
 	wp_enqueue_style( 'foto-style', get_stylesheet_uri(), false, '1.2', 'all' );
-
 	wp_enqueue_script( 'jquery' );
-
 	if ( is_singular() && wp_attachment_is_image( $post->ID ) ) {
 		wp_enqueue_script( 'foto-keyboard-image-navigation', get_template_directory_uri() . '/js/vendor/keyboard-image-navigation.js', array( 'jquery' ), '1.0' );
 	}
-	
 	wp_enqueue_script( 'foto-plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery' ), '1.0', true );
-	
 	wp_enqueue_script( 'foto-methods', get_template_directory_uri() . '/js/methods.js', array( 'jquery' ), '1.0', true );
-	
 }
 
-/**
- * Deregister default wp-pagenavi style
- *
- * @since 0.0.1
- */
-function foto_deregister_styles() {
+function hcf_deregister_styles() {
 	wp_deregister_style( 'wp-pagenavi' );
 }
 
-/**
- * Comment reply js
- *
- * @since 0.0.4
- */
-function foto_enqueue_comment_reply_script() {
+function hcf_enqueue_comment_reply_script() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 
-/**
- * Redirect to the Dashboard Page when after user activated the theme.
- * 
- * @since 1.1
- */
-global $pagenow;
-if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' ) {
 
-	wp_redirect( admin_url( 'themes.php?page=options-framework' ) );
-	exit;
-	
-}
 
 /**
  * Creates a nicely formatted and more specific title element text
