@@ -161,7 +161,7 @@ fieldset[disabled] .btn-xl.active {
 
 
 /*=================================
-			Nav
+			Navbar
 ==================================*/
 .navbar-default {
     border-color: transparent;
@@ -195,7 +195,6 @@ span.star {
 	line-height: 13px;
 	border-top: 1px solid #999;
 }
-
 .top-tom {
 	float: left;
 	margin: 0px 0px 0px;
@@ -212,7 +211,7 @@ span.star {
 }
 .navbar-default .navbar-toggle {
     border-color: yellow;
-    background-color: yellow;
+    background-color: #cecece;
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
@@ -276,7 +275,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(img/100.jpg);
+    background-image: url(img/cover.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -326,7 +325,7 @@ header .intro-text .intro-heading {
     }
 }
 section {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 section h2.section-heading {
     margin-top: 0;
@@ -343,7 +342,7 @@ section h3.section-subheading {
 }
 @media(min-width:768px) {
     section {
-        padding: 150px 0;
+        padding: 80px 0;
     }
 }
 .service-heading {
@@ -681,7 +680,7 @@ aside.about img {
     margin: 50px auto;
 }
 section#contact {
-    background-color: #222;
+    background-color: #333;
     background-position: center;
     background-repeat: no-repeat;
 }
