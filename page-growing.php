@@ -29,16 +29,21 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 				</button>
-				<img src="<?php echo get_template_directory_uri();?>/img/hcf.gif" width="200" alt="Holy City Farms"/>
-				<a class="navbar-brand page-scroll" href="#page-top">Holy City Farms</a>
+				<div class="top-tom">
+					<img src="<?php echo get_template_directory_uri();?>/img/tom.png" width="100" alt="Holy City Farms"/>
+				</div>
+				<div class="navbar-brand">
+					<a class="page-scroll" href="#page-top">Holy City Farms</a>
+					<p class="location"><a class="page-scroll" href="#page-top">Wadmalaw Island <span class="star"> &#9733; </span> South Carolina</a></p>
+
+				</div>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden"><a href="#page-top"></a></li>
-					<li><a class="page-scroll" href="#intro">Intro</a></li>
-					<li><a class="page-scroll" href="#portfolio">Feature</a></li>
-					<li><a class="page-scroll" href="#content">Content</a></li>
-					<li><a class="page-scroll" href="#about">About</a></li>
+					<li><a class="page-scroll" href="#intro">About</a></li>
+					<li><a class="page-scroll" href="#portfolio">Tomatoes</a></li>
+					<li><a class="page-scroll" href="#about">News</a></li>
 					<li><a class="page-scroll" href="#contact">Contact</a></li>
 				</ul>
 			</div>
@@ -46,10 +51,11 @@
 	</nav>
 	<header>
 		<div class="container">
-			<div class="intro-text">
+			<div class="intro-text">	
 				<div class="intro-lead-in">Local, Year Round,</div>
+				<img src="<?php echo get_template_directory_uri();?>/img/hcf.png" width="400" alt="Holy City Farms"/>
 				<div class="intro-heading">and Delicious!</div>
-				<a href="#intro" class="page-scroll btn btn-xl">Call to Action</a>
+				<!--<a href="#intro" class="page-scroll btn btn-xl">Call to Action</a>-->
 			</div>
 		</div>
 	</header>
@@ -153,12 +159,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<div class="facebook-widg" style="float:left; width:400px;margin:20px;">
-					<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FHoly-City-Farms-LLC%2F353401847244&amp;width=650&amp;height=300&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:650px; height:300px;" allowTransparency="true"></iframe>
+				<div class="facebook-widg" style="width:90%;height:500px;margin:20px;">
+					<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FHoly-City-Farms-LLC%2F353401847244&amp;width=650&amp;height=500&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:650px; height:500px;" allowTransparency="true"></iframe>
 				</div>
 			</div>
 			<div class="col-md-6">
-				<div class="twitter-widg" style="float:right; width:400px;max-height:300px;margin:20px;">
+				<div class="twitter-widg" style="width:90%;height:500px;margin:20px;">
 					<a class="twitter-timeline" href="https://twitter.com/HolyCityFarms" data-widget-id="386520590795825152">Tweets by @HolyCityFarms</a>
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 				</div>

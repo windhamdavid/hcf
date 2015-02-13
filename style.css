@@ -1,3 +1,5 @@
+/* @override http://macs.local/hcf/wp-content/themes/hcf/style.css */
+
 /*!
 Theme Name:	HCF 
 Theme URI:  http://holycityfarms.com
@@ -159,21 +161,51 @@ fieldset[disabled] .btn-xl.active {
 
 
 /*=================================
-			Navigation
+			Nav
 ==================================*/
 .navbar-default {
     border-color: transparent;
-    background-color: #222;
+    background-color: #FFF;
 }
 .navbar-default .navbar-brand {
-    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    color: yellow;
+	font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
+	font-variant: small-caps;
+	font-size: 28.5px !important;
+	line-height: 27px;
+}
+span.star {
+	font-size: 8px;
+	vertical-align: top;
+	letter-spacing: 2.5px;
+}
+.navbar-brand a {
+	color: #555;
+	text-decoration: none;
+}
+.navbar-brand a:hover,
+.navbar-brand a:active,
+.navbar-brand a:visited
+ {
+	color: #777;
+	text-decoration: none;
+}
+.location {
+	font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
+	font-size: 13px;
+	line-height: 13px;
+	border-top: 1px solid #999;
+}
+
+.top-tom {
+	float: left;
+	margin: 0px 0px 0px;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
     color: red;
+    text-decoration: none;
 }
 .navbar-default .navbar-collapse {
     border-color: rgba(255,255,255,.02);
@@ -253,20 +285,19 @@ header {
     -o-background-size: cover;
 }
 header .intro-text {
-    padding-top: 100px;
+    padding-top: 80px;
     padding-bottom: 50px;
 }
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 22px;
-    font-style: italic;
+    font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
+    font-size: 20px;
     line-height: 22px;
 }
 header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
     font-size: 50px;
     font-weight: 700;
     line-height: 50px;
@@ -277,19 +308,21 @@ header .intro-text .intro-heading {
         padding-bottom: 200px;
     }
     header .intro-text .intro-lead-in {
-        margin-bottom: 25px;
-        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        margin-bottom: 2px;
+        font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
         font-size: 40px;
         font-style: italic;
         line-height: 40px;
+        color: #000;
     }
     header .intro-text .intro-heading {
         margin-bottom: 50px;
         text-transform: uppercase;
-        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 75px;
+        font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
+        font-size: 35px;
         font-weight: 700;
         line-height: 75px;
+        color: #000;
     }
 }
 section {
