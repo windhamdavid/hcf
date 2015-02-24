@@ -13,7 +13,7 @@ function hcf_page_title() {
 endif;
 
 if ( ! function_exists( 'hcf_meta_desc') ) :
-function dw_meta_desc() {
+function hcf_meta_desc() {
 	global $post; 
 	$post = get_post( $post );
 	setup_postdata( $post );
@@ -23,7 +23,7 @@ function dw_meta_desc() {
 			echo $meta_desc_value; 
 		}
 		elseif ( $meta_desc_value == '') {
-			$meta_excerpt = dw_good_excerpt(115);
+			$meta_excerpt = hcf_good_excerpt(115);
 			echo $meta_excerpt;
 		}
 	}

@@ -4,7 +4,6 @@
 
 			<?php if ( have_posts() ) : ?>
 
-				<?php foto_content_nav( 'nav-above' ); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -12,7 +11,6 @@
 
 				<?php endwhile; ?>
 
-				<?php foto_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
 
@@ -20,6 +18,6 @@
 
 			<?php endif; ?>
 
-		</section><!-- end #content .site-content -->
+		</section>
 
 <?php get_footer(); ?>

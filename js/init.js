@@ -1,3 +1,7 @@
+$(document).ready(function() {
+    $('.carousel').carousel({interval: 8000});
+});
+  
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
@@ -13,3 +17,4 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+

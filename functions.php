@@ -22,9 +22,10 @@ function hcf_setup() {
 
 function hcf_enqueue_scripts() {
 	global $post;
-	wp_enqueue_style( 'font', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Oswald:300', '', '1.0', 'all' );
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'font', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Oswald:300', '', '1.0', 'all' );	
 	wp_enqueue_style( 'boot', get_template_directory_uri() . '/css/bootstrap.css');
+	wp_enqueue_style( 'fa', get_template_directory_uri() . '/css/font-awesome.min.css');
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-2.1.3.min.js', array(), false, true);
 	wp_enqueue_script( 'boot', get_template_directory_uri() . '/js/bootstrap.min.js', 'jquery', '', true );

@@ -8,21 +8,42 @@
 <meta name="description" content="<?php hcf_meta_desc();?>"/>
 <?php wp_head(); ?>
 </head>
-<body>
-<div id="page" class="hfeed container">
-	<header id="masthead" class="site-header clearfix" role="banner">
-		<div class="site-branding col-8">
-
-		</div>
-		<div class="header-right-area col-16 last">
-			<div class="site-social col-10">
-
+<body id="page-top" class="index hfeed">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+				</button>
+				<div class="top-tom">
+					<img src="<?php echo get_template_directory_uri();?>/img/tom.png" width="100" alt="Holy City Farms"/>
+				</div>
+				<div class="navbar-brand">
+					<a class="page-scroll" href="<?php echo home_url( '/' ); ?>">Holy City Farms</a>
+					<p class="location"><a class="page-scroll" href="#page-top">Wadmalaw Island <span class="star"> &#9733; </span> South Carolina</a></p>
+				</div>
 			</div>
-			<?php get_search_form(); ?>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<?php
+					wp_nav_menu( array(
+						'menu'              => 'primary',
+						'theme_location'    => 'primary',
+						'depth'             => 2,
+						'container'         => 'div',
+						'container_class'   => 'collapse navbar-collapse',
+						'container_id'      => 'bs-example-navbar-collapse-1',
+						'menu_class'        => 'nav navbar-nav',
+						'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+						'walker'            => new wp_bootstrap_navwalker())
+					);
+				?>
+			</div>
 		</div>
-	</header>
+	</nav>
+
 	<section class="header-text">
-	
+		
 	</section>
-	
-	<div id="main" class="main-content clearfix">

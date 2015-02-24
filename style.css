@@ -56,8 +56,8 @@ h1,h2,h3,h4,h5,h6 {font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans
 ==================================*/
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-	 webkit-tap-highlight-color: yellow;
+    background: #555;
+	 	webkit-tap-highlight-color: yellow;
 }
 .img-centered {margin: 0 auto;}
 ::-moz-selection {
@@ -163,9 +163,9 @@ fieldset[disabled] .btn-xl.active {
 /*=================================
 			Navbar
 ==================================*/
-.navbar-default {
+nav.navbar-default {
     border-color: transparent;
-    background-color: #FFF;
+    background-color: #fff;
 }
 .navbar-default .navbar-brand {
 	font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
@@ -182,11 +182,22 @@ span.star {
 	color: #555;
 	text-decoration: none;
 }
+.navbar-shrink a {
+	color: #cecece !important;
+	text-decoration: none;
+}
 .navbar-brand a:hover,
 .navbar-brand a:active,
 .navbar-brand a:visited
  {
 	color: #777;
+	text-decoration: none;
+}
+.navbar-brand.navbar-shrink a:hover,
+.navbar-brand.navbar-shrink a:active,
+.navbar-brand.navbar-shrink a:visited
+ {
+	color: #fff;
 	text-decoration: none;
 }
 .location {
@@ -225,22 +236,22 @@ span.star {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #fff;
+    color: #555;
 }
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
-    color: yellow;
+    color: red;
 }
-.navbar-default .navbar-nav>.active>a {
+.navbar-default .navbar-nav > .active > a {
     border-radius: 0;
     color: #fff;
-    background-color: blue;
+    background-color: #a00000;
 }
+
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
-    color: #fff;
-    background-color: red;
+    color: #000;
 }
 @media(min-width:768px) {
     .navbar-default {
@@ -261,8 +272,9 @@ span.star {
         border-radius: 3px;
     }
     .navbar-default.navbar-shrink {
-        padding: 10px 0;
-        background-color: #222;
+        padding: 5px 0;
+        background-color: #0a5c00;
+        background: url('img/bg.jpg') repeat;
     }
     .navbar-default.navbar-shrink .navbar-brand {
         font-size: 1.5em;
@@ -275,7 +287,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(img/cover.jpg);
+
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -287,7 +299,14 @@ header .intro-text {
     padding-top: 80px;
     padding-bottom: 50px;
 }
+header .intro-logo {
+    padding-top: 80px;
+    padding-bottom: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
 header .intro-text .intro-lead-in {
+
     margin-bottom: 25px;
     font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
     font-size: 20px;
@@ -295,7 +314,6 @@ header .intro-text .intro-lead-in {
 }
 header .intro-text .intro-heading {
     margin-bottom: 25px;
-    text-transform: uppercase;
     font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
     font-size: 50px;
     font-weight: 700;
@@ -315,8 +333,7 @@ header .intro-text .intro-heading {
         color: #000;
     }
     header .intro-text .intro-heading {
-        margin-bottom: 50px;
-        text-transform: uppercase;
+        margin-bottom: 0px;
         font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
         font-size: 35px;
         font-weight: 700;
@@ -326,19 +343,28 @@ header .intro-text .intro-heading {
 }
 section {
     padding: 50px 0;
+    background: rgba(255,255,255,.7);
+}
+.white-bg {
+	 background: rgba(255,255,255,.7);
+}
+section#intro {
+    padding: 50px 0;
+    background: rgba(255,255,255,.9);
 }
 section h2.section-heading {
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 40px;
+    font-weight: 600;
 }
 section h3.section-subheading {
     margin-bottom: 75px;
+    color: #333;
     text-transform: none;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    font-style: italic;
-    font-weight: 400;
+    font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
+    font-size: 26px;
+    font-weight: 500;
 }
 @media(min-width:768px) {
     section {
@@ -349,6 +375,49 @@ section h3.section-subheading {
     margin: 15px 0;
     text-transform: none;
 }
+
+.carousel { z-index: -99; } /* keeps this behind all content */
+.carousel .item {
+	position: fixed; 
+	opacity: 0;
+	left:0 !important;
+	width: 100%; 
+	height: 100%;
+	-webkit-transition: opacity ease-in-out 3s;
+	-moz-transition: opacity ease-in-out 3s;
+	-ms-transition: opacity ease-in-out 3s;
+	-o-transition: opacity ease-in-out 3s;
+	transition: opacity ease-in-out 3s;
+}
+.carousel .one {
+	background: url(img/cover.jpg);
+	background-size: cover;
+	-moz-background-size: cover;
+}
+.carousel .two {
+	background: url(img/cover2.jpg);
+	background-size: cover;
+	-moz-background-size: cover;
+}
+.carousel .three {
+	background: url(img/cover3.jpg);
+	background-size: cover;
+	-moz-background-size: cover;
+}
+
+.carousel .active {
+	opacity: 1 !important;
+}
+
+.carousel .left {
+	opacity: 1 !important;
+	-webkit-transition: opacity ease-in-out 1s !important;
+	-moz-transition: opacity ease-in-out 1s !important;
+	-ms-transition: opacity ease-in-out 1s !important;
+	-o-transition: opacity ease-in-out 1s !important;
+	transition: opacity ease-in-out 1s !important;
+}
+
 /*=================================
 			Portfolio
 ==================================*/
@@ -676,13 +745,23 @@ section h3.section-subheading {
 /*=================================
 			Contact
 ==================================*/
-aside.about img {
+aside.connect img {
     margin: 50px auto;
 }
+aside.connect {
+	padding: 30px 0;
+	background: rgba(255,255,255,.3);
+}
+aside.connect .section-heading {
+	padding: 30px 0 0;
+	font-size: 30px;
+	color: #000;
+	font-weight: 600;
+}
+
 section#contact {
-    background-color: #333;
-    background-position: center;
-    background-repeat: no-repeat;
+background: url('img/bg.jpg') top left repeat;
+    background-color: #183414;
 }
 section#contact .section-heading {
     color: #fff;
@@ -744,14 +823,39 @@ section#comment {
 			Footer
 ==================================*/
 footer {
-	background-color: #333;
+	background: url('img/bg.jpg') repeat;
+	padding: 25px 0 0;
 	color:#FFFFFF;
-	padding: 25px 0;
-	text-align: center;
 }
 footer a {
-	color:#FFFFFF;
+	color:#fff;
+	text-decoration: none;
 }
+footer a:hover, footer a:visited, footer a:active {
+	color:#FFF;
+	text-decoration: none;
+}
+.credit {
+	margin: 60px 0 0;
+	color: #cecece;
+}
+.credit a {
+	color: #cecece !important;
+}
+.footer-brand {
+	font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
+	font-variant: small-caps;
+	font-size: 20px;
+	line-height: 18px;
+	float: right;
+}
+.footer-brand .location {
+	font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
+	font-variant: small-caps;
+	font-size: 9px;
+	line-height: 18px;
+}
+
 footer span.copyright {
     text-transform: uppercase;
     text-transform: none;
@@ -794,7 +898,9 @@ ul.social-buttons li.plus a:hover {background-color:#E53343}
 
 
 
-
+i.fa-circle {
+	color: #688464;
+}
 
 
 
