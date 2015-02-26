@@ -62,9 +62,8 @@
 				<div class="col-md-8 col-md-offset-2">
 					<div class="intro-text">
 						<div class="intro-logo">	
-							<div class="intro-lead-in">Local, Year Round,</div>
-							<img src="<?php echo get_template_directory_uri();?>/img/hcf.png" width="400" alt="Holy City Farms"/>
-							<div class="intro-heading">and Delicious!</div>
+
+							<img src="<?php echo get_template_directory_uri();?>/img/hcf-cover.png" width="500" alt="Holy City Farms"/>
 						</div>
 						<!--<a href="#intro" class="page-scroll btn btn-xl">Call to Action</a>-->
 					</div>
@@ -81,8 +80,8 @@
 				<h3 class="section-subheading text-muted">It is all about tomatoes here at Holy City Farms. We strive to grow only the best tomatoes to supply local restaurants and your kitchen here in the greater Charleston area. We do this in a way that is healthy to you and the environment.  The simple rule is that if it doesn't taste good, then we won't grow it!  What good is a tomato if it is pretty, round, red and tastes like cardboard?  Many of our customers, both young and old, had no idea tomatoes could taste so good.</h3>
 			</div>
 		</div>
-		<div class="row text-center">
-			<div class="col-md-4 white-bg">
+		<div class="row text-center white-bg-feature">
+			<div class="col-md-4">
 					<span class="fa-stack fa-4x">
 						<i class="fa fa-circle fa-stack-2x text-primary"></i>
 						<i class="fa fa-sun-o fa-stack-2.5x fa-inverse"></i>
@@ -91,7 +90,7 @@
 				<h4 class="service-heading">Hydroponic Farming</h4>
 				<p class="text-muted">We grow our produce in a greenhouse, so we can customize the environment to maximize growth year round! This gives our growing process several environmental advantages. We can take advantage of the sun throughout the winter.  It may be freezing outside, but the plants are cozy inside. We nourish our plants with nutrient-rich water that we continually recycle and sterilize. This uses substantially less water than field growing. Finally, we use coco coir as a growing medium.  No dirt!  This means that our plants don’t have contact with soil-borne diseases, and pests or animal waste fertilizers. </p>
 			</div>
-			<div class="col-md-4 white-bg">
+			<div class="col-md-4">
 				<span class="fa-stack fa-4x">
 					<i class="fa fa-circle fa-stack-2x text-primary"></i>
 					<i class="fa fa-bug fa-stack-1x fa-inverse"></i>
@@ -99,7 +98,7 @@
 				<h4 class="service-heading">Integrated Pest Management</h4>
 				<p class="text-muted">Our products are free of any harmful chemical pesticides, insecticides or herbicides. We employ integrated pest management solutions, including biological controls such as using beneficial insects to prey on harmful pests. Outdoors plants are vulnerable to bugs and disease but in a greenhouse this is much easier to control. Bumble bees keep our plants healthy by pollinating them and beneficial predator insects, like Wasps, help combat the bad bugs.  If we do spray anything on the plants, it is certified organic (OMRI).  You can feel safe eating our tomatoes. </p>
 			</div>
-			<div class="col-md-4 white-bg">
+			<div class="col-md-4">
 				<span class="fa-stack fa-4x">
 					<i class="fa fa-circle fa-stack-2x text-primary"></i>
 					<i class="fa fa-leaf fa-stack-1x fa-inverse"></i>
@@ -110,7 +109,7 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-6 col-md-offset-3 text-center">
-				<blockquote><h3 class="section-subheading text-muted">The earliest reference to tomatoes being grown in North America is from 1710, when herbalist William Salmon reported seeing them in what is today South Carolina.</h3></blockquote>
+				<blockquote><h3 class="section-subheading-quote text-muted">The earliest reference to tomatoes being grown in North America is from 1710, when herbalist William Salmon reported seeing them in what is today South Carolina.</h3></blockquote>
 			</div>
 		</div>
 	</div>
@@ -120,7 +119,61 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-offset-3 text-center">
-				<h2 class="section-heading">Wholesale</h2>
+				<h2 class="section-heading">Market</h2>
+				<h3 class="section-subheading text-muted">Visit us at the Homegrown Johns Island Farmers Market Saturdays from 10-2, beginning April 2015.</h3>
+			</div>
+		</div>
+		<div class="row">
+		<div class="col-md-4 col-sm-6 portfolio-item">
+			<a href="#Modal1" class="portfolio-link" data-toggle="modal">
+				<div class="portfolio-hover">
+					<div class="portfolio-hover-content">
+						<i class="fa fa-plus fa-3x"></i>
+					</div>
+				</div>
+				<img src="<?php echo get_template_directory_uri();?>/img/toms3.jpg" class="img-responsive" alt="Tomato"/>
+			</a>
+			<div class="portfolio-caption">
+				<h4>One Pound Cherry Mix</h4>
+				<p class="text-muted">A nice blend of our sweet sweet cherries.</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 portfolio-item">
+			<a href="#Modal2" class="portfolio-link" data-toggle="modal">
+				<div class="portfolio-hover">
+					<div class="portfolio-hover-content">
+						<i class="fa fa-plus fa-3x"></i>
+					</div>
+				</div>
+				<img src="<?php echo get_template_directory_uri();?>/img/toms7.jpg" class="img-responsive" alt="Tomato"/>
+			</a>
+			<div class="portfolio-caption">
+				<h4>One Pound Slicer Mix</h4>
+				<p class="text-muted">A mix of our medium sized tomatoes for smaller households or those not completely addicted.</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 portfolio-item">
+			<a href="#Modal3" class="portfolio-link" data-toggle="modal">
+				<div class="portfolio-hover">
+					<div class="portfolio-hover-content">
+						<i class="fa fa-plus fa-3x"></i>
+					</div>
+				</div>
+				<img src="<?php echo get_template_directory_uri();?>/img/toms8.jpg" class="img-responsive" alt="Tomato"/>
+			</a>
+			<div class="portfolio-caption">
+				<h4>Two Pound Mix</h4>
+				<p class="text-muted">Two pounds of our slicers. This is where you find the tomatoes destined for your sandwich or a nice caprese.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="portfolio" class="">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-offset-3 text-center">
+				<h2 class="section-heading">Restaurants</h2>
 				<h3 class="section-subheading text-muted">We deliver anywhere between Wadmalaw and downtown Charleston twice a week.  Please contact us for availability and pricing.</h3>
 			</div>
 		</div>
@@ -136,7 +189,7 @@
 				</a>
 				<div class="portfolio-caption">
 					<h4>Slice Mix</h4>
-					<p class="text-muted">This is mix of our larger varieties.  The goal here is a blend of taste and color.  Available in 15# flats…</p>
+					<p class="text-muted">This is mix of our larger varieties.  The goal here is a blend of taste and color.  Available in 15lb flats.</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 portfolio-item">
@@ -150,7 +203,7 @@
 				</a>
 				<div class="portfolio-caption">
 					<h4>Bite Mix</h4>
-					<p class="text-muted">This is a blend of our smaller varieties.  Our current mix contains 6 different cherry varieties…beautiful.  Available in 15# flats…</p>
+					<p class="text-muted">This is a blend of our smaller varieties.  Our current mix contains 6 different cherry varieties.  Available in 15lb flats.</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6 portfolio-item">
@@ -165,58 +218,6 @@
 				<div class="portfolio-caption">
 					<h4>Specialty</h4>
 					<p class="text-muted">We sometimes bring produce that we grow in our trial gardens.  Anyone remember the heirloom cukes last year?  Tasty.  They may come back again this year!</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="portfolio" class="">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-offset-3 text-center">
-					<h2 class="section-heading">Market</h2>
-					<h3 class="section-subheading text-muted">Visit us at the Homegrown Johns Island Farmers Market Saturdays from 10-2.</h3>
-				</div>
-			</div>
-			<div class="row">
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#Modal1" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-plus fa-3x"></i>
-						</div>
-					</div>
-					<img src="<?php echo get_template_directory_uri();?>/img/toms3.jpg" class="img-responsive" alt="Tomato"/>
-				</a>
-				<div class="portfolio-caption">
-					<h4>One and two pound mixes</h4>
-					<p class="text-muted">Description</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#Modal2" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-plus fa-3x"></i>
-						</div>
-					</div>
-					<img src="<?php echo get_template_directory_uri();?>/img/toms7.jpg" class="img-responsive" alt="Tomato"/>
-				</a>
-				<div class="portfolio-caption">
-
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-6 portfolio-item">
-				<a href="#Modal3" class="portfolio-link" data-toggle="modal">
-					<div class="portfolio-hover">
-						<div class="portfolio-hover-content">
-							<i class="fa fa-plus fa-3x"></i>
-						</div>
-					</div>
-					<img src="<?php echo get_template_directory_uri();?>/img/toms8.jpg" class="img-responsive" alt="Tomato"/>
-				</a>
-				<div class="portfolio-caption">
-					<h4>Title</h4>
-					<p class="text-muted">Description</p>
 				</div>
 			</div>
 		</div>
@@ -303,7 +304,7 @@
 					<p class="text-muted">The Boss</p>
 				</div>
 				<div class="team-member">
-					<img src="<?php echo get_template_directory_uri();?>/img/staff.jpg" class="img-responsive img-circle" alt="Elizabeth Ransford"/>
+					<img src="<?php echo get_template_directory_uri();?>/img/kids.jpg" class="img-responsive img-circle" alt="Elizabeth Ransford"/>
 					<h4>Our children!</h4>
 					<p class="text-muted">We do our best to put them to work.  Maybe one day they will take over the business</p>
 				</div>
@@ -318,7 +319,7 @@
 			</div>
 			<div class="col-sm-4">
 				<div class="team-member">
-					<img src="<?php echo get_template_directory_uri();?>/img/bowl.jpg" class="img-responsive img-circle" alt="Staff"/>
+					<img src="<?php echo get_template_directory_uri();?>/img/growers.jpg" class="img-responsive img-circle" alt="Staff"/>
 					<h4>Assistant Growers</h4>
 					<p class="text-muted">A Short Description</p>
 				</div>
@@ -346,7 +347,7 @@
 			<div class="col-lg-12">
 				<form name="sentMessage" id="contactForm" novalidate>
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Name *" id="name" required data-validation-required-message="Please enter your name.">
 								<p class="help-block text-danger"></p>
@@ -360,14 +361,23 @@
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
 								<textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
+						<div class="col-md-4">
+							<img class="img-responsive" src="<?php echo get_template_directory_uri();?>/img/map.png" alt="Holy City Farms"/>
+							<h4>Phone: (843) 670-2516</h3>
+							<h4 class="text-muted">Email: shawn@holycityfarms.com</h3>
+							<h4 class="text-muted">4949 Maybank Highway, Wadmalaw, SC 29487</h3>
+							
+						</div>
 						<div class="clearfix"></div>
 						<div class="col-lg-12 text-center">
+							<h4 class="text-muted">Phone: (843) 670-2516</h3>
+							<h4 class="text-muted">Email: shawn@holycityfarms.com</h3>
 							<div id="success"></div>
 							<button type="submit" class="btn btn-xl">Send Message</button>
 						</div>
@@ -411,7 +421,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<p class="credit"><small>Web by <a href="https://davidawindham.com" target="_blank">David Windham</a></small></p>
+				
 			</div>
 			<div class="col-md-4">
 
@@ -421,6 +431,7 @@
 					<a class="page-scroll" href="#page-top">Holy City Farms</a>
 					<p class="location"><a class="page-scroll" href="#page-top">Wadmalaw Island <span class="star"> &#9733;</span> South Carolina</a></p>
 				</div>
+				<p class="credit"><small>Website - <a href="https://davidawindham.com" target="_blank">David Windham</a></small></p>
 			</div>
 		</div>
 	</div>
