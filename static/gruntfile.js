@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 		cssmin: {
 		  combine: {
 		    files: {
-		     'style.min.css': ['style.css', 'css/bootstrap.css', 'css/font-awesome.min.css', 'css/animate.css']
+		     'style.min.css': ['css/bootstrap.css', 'css/font-awesome.css', 'css/animate.css', 'style.css']
 		    }
 		  }
 		},
